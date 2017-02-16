@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+    <key>autoRefresh</key>
+	<array>
+		<string>DocumentSaved</string>
+	</array>
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
@@ -12,10 +16,10 @@
 set -f
 
 TPY=${TM_PYTHON:-python}
-"${TPY}" "${TM_BUNDLE_SUPPORT}/validate.py"
+"${TPY}" "${TM_BUNDLE_SUPPORT}/main.py" --html
 </string>
 	<key>input</key>
-	<string>scope</string>
+	<string>document</string>
 	<key>inputFormat</key>
 	<string>text</string>
 	<key>keyEquivalent</key>
